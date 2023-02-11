@@ -15,12 +15,9 @@ function vali_input($info) {
     return $info;
 }
 
-$uname = $pword = "";
-$firstErr = "";
-
 if (isset($_POST["submit"])) {
-    $uname = $pword = "";
-    $firstErr = "";
+    $uname = $pword = "0";
+    $firstErr = "0";
     
     if (empty($_POST["name"])) {
         errHan("Please enter a username");
@@ -40,10 +37,15 @@ if (isset($_POST["submit"])) {
     else {
         $pword = vali_input($_POST["pwrd"]);;
     }
-    if (!empty($firstErr)) {
+    if (!(empty($firstErr))) {
         $pth = "location:failsign.php?error=" . $firstErr;
         header($pth);
         exit();
+       else {
+           $pth = "location:failsign.php?error=letshearit";
+        header($pth);
+        exit();
+       }
    }
     // $connection = obdc_connect('DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:sizeserver2.database.windows.net,1433;DATABASE=sizedb5;UID=ooas3;PWD=Password22!!;CONNECTION TIMEOUT=30;');
 }
