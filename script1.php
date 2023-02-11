@@ -16,7 +16,7 @@ function vali_input($info) {
 $uname = $pword = "";
 $firstErr = "";
 
-if (isset($_POST["SUBMIT"])) {
+if (isset($_POST["submit"])) {
     $uname = $pword = "";
     $firstErr = "";
     
