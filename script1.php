@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function errHan($error) {
     if (empty($firstErr)) {
         $firstErr = $error;
