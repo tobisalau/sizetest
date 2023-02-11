@@ -22,6 +22,8 @@ if (isset($_POST["submit"])) {
     
     if (empty($_POST["name"])) {
         errHan("Please enter a username");
+        header("location: index.php?error=emptyname");
+        exit();
     }
     else {
         $uname = vali_input($_POST["username"]);
