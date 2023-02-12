@@ -43,12 +43,21 @@ if (isset($_POST["submit"])) {
         $pword = vali_input($_POST["pwrd"]);;
     }
    
-    $connectionInfo = array("UID" => "ooas3", "pwd" => "Password22!!", "Database" => "sizedb5", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-    $serverName = "tcp:sizeserver2.database.windows.net,1433";
-    $conn = sqlsrv_connect($serverName, $connectionInfo);
-    $tsql= "SELECT pword FROM Users WHERE username == " . $uname;
-    $getResults= sqlsrv_query($conn, $tsql);
-    if (hash('md5',$getResults) == hasg('md5',$pword)) {
+    try {
+    $conn = new PDO("sqlsrv:server = tcp:sizeserver2.database.windows.net,1433; Database = sizedb5", "ooas3", "Password22!!");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+    }
+
+    $tl = "SELECT pword FROM Users WHERE username == " . $uname;
+    $tsql = $conn->query($tl);
+
+
+    
+    //$getResults= sqlsrv_query($conn, $tsql);
+    if (hash('md5',$tsql) == hasg('md5',$pword)) {
         header("Location: index.php?error=success");
         exit;
    
