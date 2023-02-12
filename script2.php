@@ -80,7 +80,7 @@ if (isset($_POST["submit"])) {
         header("Location: index.php?error=usernametaken");
         exit;
     } 
-      $pword = hash('md5', $pword)
+      $pword = hash('md5', $pword);
     $tp = "INSERT INTO users (username, pword, email) VALUES ('$name', '$pword', $email)";
      $conn->exec($tp);
       header("Location: index.php?error=itworkedmate");
