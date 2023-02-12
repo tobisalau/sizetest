@@ -51,6 +51,14 @@
 
     <script type="module" src="back.js">
     </script>
+   <script> 
+    
+    function showError() {
+        x = document.getElementsByTagName("span");
+        var ab = <?php echo json_encode($errnm, JSON_HEX_TAG); ?>;
+        x.innerText = ab;
+    }
+    </script>
 
 </head>
 
@@ -116,14 +124,6 @@ if (isset($_GET["error"])) {
 
     <script src="back.js">
     </script>
-    <script> 
     
-    function showError() {
-        x = document.getElementsByTagName("span");
-        var ab = <?php echo json_encode($errnm, JSON_HEX_TAG); ?>;
-        x.innerText = ab;
-        x.classList.add("erry");
-    }
-    </script>
 </body>
 
