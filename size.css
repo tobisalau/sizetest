@@ -396,7 +396,7 @@ body {
   width: 40vw;
   position: absolute;
   background-color: rgba(242, 244, 245, 0.897);
-  left:14%;
+  left:10%;
   height:54vh;
   border-radius: 1%;
   display: flex;
@@ -455,7 +455,7 @@ span{
   font-size: 2em;
   margin: 1%;
   bottom: 2.5rem;
-  left: 45%;
+  left: 40%;
   animation: shwErr 5s linear;
   -moz-animation: shwErr 5s linear;
   -webkit-animation: shwErr 5s linear;
