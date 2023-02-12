@@ -1,6 +1,5 @@
 <?php
 
-ob_start();
 
 session_start();
 
@@ -21,7 +20,7 @@ if (isset($_POST["submit"])) {
     $uname = $pword = "";
     $firstErr = "";
     
-    if (empty($_POST["name"])) {
+    if (empty($_POST["username"])) {
         errHan("Please enter a username");
         header("Location: failsign.php?error=emptyname");
         exit;
