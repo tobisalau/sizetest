@@ -57,7 +57,7 @@ if (isset($_POST["submit"])) {
 
     
     //$getResults= sqlsrv_query($conn, $tsql);
-    if (hash('md5',$tsql) == hasg('md5',$pword)) {
+    if (hash('md5',$tsql) == hash('md5',$pword)) {
         header("Location: index.php?error=success");
         exit;
    
