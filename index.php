@@ -102,7 +102,6 @@
                 <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
                 <button type="submit" name="submit" class="input">Log In </button>
             </form>
-            <span></span>
         </section>
     </div>
 
