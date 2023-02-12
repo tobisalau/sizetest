@@ -82,7 +82,7 @@ if (isset($_POST["submit"])) {
         exit;
     } 
       $pword = hash('md5', $pword);
-    $tp = "INSERT INTO users (username, pword, email) VALUES ('$name', '$pword', $email)";
+    $tp = "INSERT INTO Users (username, pword, email) VALUES ('$name', '$pword', '$email')";
      $conn->exec($tp);
       header("Location: failsign.php?error=itworkedmate");
     exit;
