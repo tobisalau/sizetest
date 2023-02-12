@@ -74,6 +74,21 @@ if (isset($_GET["error"])) {
    else if($errnm =="emptypassword") {
       echo "<span>Please enter a password</span>";
       }
+   else if($errnm =="emptyemail") {
+      echo "<span>Please enter an email</span>";
+      }
+   else if($errnm =="emptypassword") {
+      echo "<span>Please enter a password</span>";
+      }
+   else if($errnm =="Invalid-Email-Format") {
+      echo "<span>Invalid Email Format</span>";
+      }
+   else if($errnm =="password-unmatch") {
+      echo "<span>Passwords don't match</span>";
+      }
+   else if($errnm =="usernametaken") {
+      echo "<span>Username is taken</span>";
+      }
 }
 ?>
    
