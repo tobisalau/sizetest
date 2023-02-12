@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
     try {
     $conn = new PDO("sqlsrv:server = tcp:sizeserver2.database.windows.net,1433; Database = sizedb5", "ooas3", "Password22!!");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $tl = "SELECT pword FROM Users WHERE username = '{$uname}'";
+    $tl = "SELECT pword FROM Users WHERE username = {$uname}";
     $tsql = $conn->query($tl);
     //$getResults= sqlsrv_query($conn, $tsql);
     if (hash('md5',$tsql) == hash('md5',$pword)) {
