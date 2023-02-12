@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
 
     
    
-    }
+    
    
     // $connection = obdc_connect('DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:sizeserver2.database.windows.net,1433;DATABASE=sizedb5;UID=ooas3;PWD=Password22!!;CONNECTION TIMEOUT=30;');
 }
