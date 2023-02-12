@@ -69,6 +69,7 @@ if (isset($_GET["error"])) {
    else if($errnm =="emptypassword") {
       echo "<span>Please enter a password</span>";
       }
+}
 ?>
    
     <header>
