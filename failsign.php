@@ -109,16 +109,24 @@ if (isset($_GET["error"])) {
                 billion garments produced for fashion end up in landfill yearly. Every 16 seconds the equivalent of the
                 height of the Eiffel Tower is thrown in landfill </a> </div>
     </div>
-   <div id="show">
+   <div id="show" style="left:0">
         <img src="shirts.jpg" alt="T-shirts folded up" id="im1">
     </div>
     <div id="page2intro" style="opacity:1">
         <section class="signin">
-            <h2>Log in</h2>
+            <h2 id="login" onclick="toLog()">Log in</h2>
+            <h2 id="sin30" onclick="toSign()">Sign Up</h2>
             <form method="post" action="script1.php" id="loggy">
                 <input type="text" class="input" name="username" placeholder="Username"><br>
                 <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
-                <button type="submit" name="submit" class="input">Log in </button>
+                <button type="submit" name="submit" class="input">Log In </button>
+            </form>
+           <form method="post" action="script2.php" id="singy">
+                <input type="text" class="input" name="username" placeholder="Username"><br>
+                <input type="text" class="input" name="email" placeholder="Email"><br>
+                <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
+                <input type="password" class="input" name="pwrd2" placeholder="Confirm Password"> <br>
+                <button type="submit" name="submit" class="input">Sign Up</button>
             </form>
         </section>
     </div>
