@@ -1,6 +1,6 @@
 <?php
-
-
+ phpinfo();
+/*
 session_start();
 
 function errHan($error) {
@@ -68,8 +68,8 @@ if (isset($_POST["submit"])) {
 
 
 
-/* 
-    
+
+    */
 
 ?>
     
