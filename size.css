@@ -447,21 +447,22 @@ h2 {
 }
 
 span{ 
-  width:60%;
+  width:40%;
   height:10%;
-  position: relative;
+  position: absolute;
   display: block;
   justify-self:center;
-  font-size: 1.5rem;
-  margin: 0;
-  bottom: -2.5rem;
-  left: 3.5rem;
+  font-size: 2em;
+  margin: 1%;
+  bottom: 2.5rem;
+  left: 45%;
   animation: shwErr 5s linear;
   -moz-animation: shwErr 5s linear;
   -webkit-animation: shwErr 5s linear;
   animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
+   z-index:1000000;
 }
 
 @-moz-keyframes shwErr{
