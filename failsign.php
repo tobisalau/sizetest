@@ -109,7 +109,9 @@ if (isset($_GET["error"])) {
                 billion garments produced for fashion end up in landfill yearly. Every 16 seconds the equivalent of the
                 height of the Eiffel Tower is thrown in landfill </a> </div>
     </div>
-   
+   <div id="show">
+        <img src="shirts.jpg" alt="T-shirts folded up" id="im1">
+    </div>
     <div id="page2intro" style="opacity:1">
         <section class="signin">
             <h2>Log in</h2>
