@@ -1,4 +1,4 @@
-<?php
+a<?php
 
 session_start();
 
@@ -84,7 +84,8 @@ if (isset($_POST["submit"])) {
       $pword = hash('md5', $pword);
     $tp = "INSERT INTO Users (username, pword, email) VALUES ('$uname', '$pword', '$email')";
      $conn->exec($tp);
-      header("Location: failsign.php?error=itworkedmate");
+        $temp = "Location: itemsearch.php?error=" . &uname;
+      header($temp);
     exit;
     } 
     catch (PDOException $e) {
