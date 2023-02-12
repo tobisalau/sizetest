@@ -414,6 +414,40 @@ body {
 }
 
 
+#login {
+  padding: 0.5% auto;
+  font-size: 3.5rem;
+  position: absolute;
+  top:-0.1vh;
+  margin: 1rem 0;
+  left:20%;
+  transition-property: all;
+  transition-duration: 700ms;
+}
+
+#sin30{
+  padding: 0.5% auto;
+  font-size: 3.5rem;
+  position: absolute;
+  top:-0.1vh;
+  margin: 1rem 0;
+  left:60%;
+  transition-property: all;
+  transition-duration: 700ms;
+}
+
+#sin30:hover{
+  transform: scale(1.05);
+  color: #667;
+}
+
+#login:hover{
+  transform: scale(1.05);
+  color: #667;
+}
+
+
+
 @media only screen and (max-width:700px) {
 
   #show{
