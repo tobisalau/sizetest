@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
     }
     else {
         $email = vali_input($_POST["email"]);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             errHan("Only letters, number and underscores are allowed in usernames");
             header("Location: failsign.php?error=Invalid-Email-Format");
         exit;
