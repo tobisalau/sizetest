@@ -455,14 +455,15 @@ span{
   margin: 0;
   bottom: -2.5rem;
   left: 3.5rem;
-  display: none;
-  animation: shwErr 5s linear;
-  -moz-animation: shwErr 5s linear;
-  -webkit-animation: shwErr 5s linear;
+  animation: shwErr 1.5s linear;
+  -moz-animation: shwErr 1.5s linear;
+  -webkit-animation: shwErr 1.5s linear;
   animation-iteration-count: 1;
-  animation-play-state: paused;
   -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
 
 @-moz-keyframes shwErr{
