@@ -95,7 +95,7 @@ if (isset($_GET["error"])) {
             <form method="post" action="script1.php" id="loggy">
                 <input type="text" class="input" name="username" placeholder="Username"><br>
                 <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
-                <input type="submit" value="Submit" class="input">
+                <button type="submit" name="submit" class="input">Log in </button>
             </form>
         </section>
     </div>
