@@ -97,7 +97,6 @@ if (isset($_GET["error"])) {
                 <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
                 <input type="submit" value="Submit" class="input">
             </form>
-            <span>Hello</span>
         </section>
     </div>
 
