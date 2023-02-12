@@ -21,42 +21,42 @@ if (isset($_POST["submit"])) {
     
     if (empty($_POST["username"])) {
         errHan("Please enter a username");
-        header("Location: failsign.php?error=emptyname");
+        header("Location: index.php?error=emptyname");
         exit;
     }
     else {
         $uname = vali_input($_POST["username"]);
         if (!preg_match("/^[a-zA-Z0-9_]*$/",$uname)) {
             errHan("Only letters, number and underscores are allowed in usernames");
-            header("Location: failsign.php?error=Invalid-Username");
+            header("Location: index.php?error=Invalid-Username");
             exit;
         }
     }
   
     if (empty($_POST["email"])) {
         errHan("Please enter an email");
-        header("Location: failsign.php?error=emptyemail");
+        header("Location: index.php?error=emptyemail");
         exit;
     }
     else {
         $email = vali_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             errHan("Only letters, number and underscores are allowed in usernames");
-            header("Location: failsign.php?error=Invalid-Email-Format");
+            header("Location: index.php?error=Invalid-Email-Format");
             exit;
         }
     }
     
     if (empty($_POST["pwrd"])) {
         errHan("Please enter a password");
-        header("Location: failsign.php?error=emptypassword");
+        header("Location: index.php?error=emptypassword");
         exit;
     }
     else {
         $pword = vali_input($_POST["pwrd"]);
         $pword2 = vali_input($_POST["pwrd2"]);
         if (!$pword == $pword2) {
-          header("Location: failsign.php?error=password-unmatch");
+          header("Location: index.php?error=password-unmatch");
             exit; 
         }
     }
