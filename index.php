@@ -96,11 +96,19 @@
 
     <div id="page2intro">
         <section class="signin">
-            <h2>Log in</h2>
+            <h2 id="login" onclick="toLog()">Log in</h2>
+            <h2 id="sin30" onclick="toSign()">Sign Up</h2>
             <form method="post" action="script1.php" id="loggy">
                 <input type="text" class="input" name="username" placeholder="Username"><br>
                 <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
                 <button type="submit" name="submit" class="input">Log In </button>
+            </form>
+           <form method="post" action="script2.php" id="singy">
+                <input type="text" class="input" name="username" placeholder="Username"><br>
+                <input type="text" class="input" name="email" placeholder="Email"><br>
+                <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
+                <input type="password" class="input" name="pwrd2" placeholder="Confirm Password"> <br>
+                <button type="submit" name="submit" class="input">Sign Up</button>
             </form>
         </section>
     </div>
