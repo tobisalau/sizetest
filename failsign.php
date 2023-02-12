@@ -51,14 +51,6 @@
 
     <script type="module" src="back.js">
     </script>
-   <script> 
-    
-    function showError(ab) {
-        x = document.getElementsByTagName("span");
-        x.innerText = ab;
-        x.textContent = ab;
-    }
-    </script>
 
 </head>
 
@@ -68,11 +60,15 @@
 
 if (isset($_GET["error"])) {
     $errnm = $_GET["error"];
-    echo '<script type="text/javascript">',
-    'showError(<?php echo json_encode($errnm, JSON_HEX_TAG); ?>);',
-    '</script>'
-    ;
-}
+    if ($errnm == "emptyname") {
+       echo "<span>Please enter a username</span>";
+   }
+   else if ($errnm =="Invalid-Username"){
+      echo "<span>Incorrect username or password</span>";
+      }
+   else if($errnm =="emptypassword") {
+      echo "<span>Please enter a password</span>";
+      }
 ?>
    
     <header>
@@ -124,9 +120,6 @@ if (isset($_GET["error"])) {
         <!-- <hr style="position:absolute; bottom:0%; width:100%; background-color:black; height:0.2%; padding:0; margin:0;"> -->
         <p id="copy">SizeItRight 2022 - founded by Tobi Salau All rights reserved</p>
     </footer>
-
-    <script src="back.js">
-    </script>
     
 </body>
 
