@@ -42,14 +42,6 @@ if (isset($_POST["submit"])) {
     else {
         $pword = vali_input($_POST["pwrd"]);;
     }
-   
-   
-    // $connection = obdc_connect('DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:sizeserver2.database.windows.net,1433;DATABASE=sizedb5;UID=ooas3;PWD=Password22!!;CONNECTION TIMEOUT=30;');
-}
-
-
-
-/* 
     $serverName = "sizeserver2.database.windows.net"; 
     $connectionOptions = array(
         "Database" => "sizedb5", 
@@ -58,15 +50,22 @@ if (isset($_POST["submit"])) {
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT brandname FROM Brands WHERE b_id == 1";
+    $tsql= "SELECT pword FROM Users WHERE username == " . $uname;
     $getResults= sqlsrv_query($conn, $tsql);
     echo $getResults
-    /* if ($getResults == FALSE)
-        echo (sqlsrv_errors());
-    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
+    if (hash('md5',$getResults) == hasg('md5',$pword)) {
+        header("Location: index.php?error=success");
+        exit;
+   
     }
-    sqlsrv_free_stmt($ getResults); */
+   
+    // $connection = obdc_connect('DRIVER={ODBC Driver 18 for SQL Server};Server=tcp:sizeserver2.database.windows.net,1433;DATABASE=sizedb5;UID=ooas3;PWD=Password22!!;CONNECTION TIMEOUT=30;');
+}
+
+
+
+/* 
+    
 
 ?>
     
