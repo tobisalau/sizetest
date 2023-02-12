@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
         if (!preg_match("/^[a-zA-Z0-9_]*$/",$uname)) {
             errHan("Only letters, number and underscores are allowed in usernames");
             header("Location: failsign.php?error=Invalid-Username");
-        exit;
+            exit;
         }
     }
   
@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             errHan("Only letters, number and underscores are allowed in usernames");
             header("Location: failsign.php?error=Invalid-Email-Format");
-        exit;
+            exit;
         }
     }
     
@@ -57,8 +57,8 @@ if (isset($_POST["submit"])) {
         $pword2 = vali_input($_POST["pwrd2"]);
         if (!$pword == $pword2) {
           header("Location: failsign.php?error=password-unmatch");
-        exit;
-          
+            exit; 
+        }
     }
    
     try {
@@ -85,7 +85,8 @@ if (isset($_POST["submit"])) {
      $conn->exec($tp);
       header("Location: index.php?error=itworkedmate");
     exit;
-} catch (PDOException $e) {
+    } 
+    catch (PDOException $e) {
     header("Location: index.php?error=server");
     exit;
 }
