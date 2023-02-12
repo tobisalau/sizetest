@@ -22,21 +22,21 @@ if (isset($_POST["submit"])) {
     if (empty($_POST["name"])) {
         errHan("Please enter a username");
         header("location: https://sizetest.azurewebsites.net/index.php?error=emptyname");
-        exit;
+        exit();
     }
     else {
         $uname = vali_input($_POST["username"]);
         if (!preg_match("/^[a-zA-Z0-9_]*$/",$uname)) {
             errHan("Only letters, number and underscores are allowed in usernames");
             header("location: https://sizetest.azurewebsites.net/index.php?error=Invalid-Username");
-        exit;
+        exit();
         }
     }
     
     if (empty($_POST["pwrd"])) {
         errHan("Please enter a password");
         header("location: https://sizetest.azurewebsites.net/index.php?error=emptypassword");
-        exit;
+        exit();
     }
     else {
         $pword = vali_input($_POST["pwrd"]);;
