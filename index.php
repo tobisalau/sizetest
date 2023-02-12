@@ -115,8 +115,6 @@
 
 <?php 
 
-<?php 
-
 if (isset($_GET["error"])) {
     $errnm = $_GET["error"];
     if ($errnm == "emptyname") {
@@ -143,11 +141,9 @@ if (isset($_GET["error"])) {
    else if($errnm =="usernametaken") {
       echo "<span>Username is taken</span>";
       }
-   
 }
 ?>
-}
-?>
+
 
     <!-- <div id="thelist">
         <ul id="select" style="padding: 0; margin: 0;">
