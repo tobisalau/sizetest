@@ -23,21 +23,21 @@ if (isset($_POST["submit"])) {
     
     if (empty($_POST["name"])) {
         errHan("Please enter a username");
-        header("Location: https://sizetest.azurewebsites.net/failsign.php?error=emptyname");
+        header("Location: failsign.php?error=emptyname");
         exit;
     }
     else {
         $uname = vali_input($_POST["username"]);
         if (!preg_match("/^[a-zA-Z0-9_]*$/",$uname)) {
             errHan("Only letters, number and underscores are allowed in usernames");
-            header("Location: https://sizetest.azurewebsites.net/failsign.php?error=Invalid-Username");
+            header("Location: failsign.php?error=Invalid-Username");
         exit;
         }
     }
     
     if (empty($_POST["pwrd"])) {
         errHan("Please enter a password");
-        header("Location: https://sizetest.azurewebsites.net/failsign.php?error=emptypassword");
+        header("Location: failsign.php?error=emptypassword");
         exit;
     }
     else {
