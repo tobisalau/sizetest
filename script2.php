@@ -83,10 +83,10 @@ if (isset($_POST["submit"])) {
       $pword = hash('md5', $pword)
     $tp = "INSERT INTO users (username, pword, email) VALUES ('$name', '$pword', $email)";
      $conn->exec($tp);
-      header("Location: login.php?error=itworkedmate");
+      header("Location: index.php?error=itworkedmate");
     exit;
 } catch (PDOException $e) {
-    header("Location: login.php?error=server");
+    header("Location: index.php?error=server");
     exit;
 }
     
@@ -101,17 +101,3 @@ if (isset($_POST["submit"])) {
 
 ?>
     
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
