@@ -52,7 +52,6 @@ if (isset($_POST["submit"])) {
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     $tsql= "SELECT pword FROM Users WHERE username == " . $uname;
     $getResults= sqlsrv_query($conn, $tsql);
-    echo $getResults
     if (hash('md5',$getResults) == hasg('md5',$pword)) {
         header("Location: index.php?error=success");
         exit;
