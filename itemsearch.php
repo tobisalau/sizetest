@@ -66,6 +66,15 @@
 </head>
 
 <body>
+    
+     <?php 
+
+if (isset($_GET["error"])) {
+    $named= $_GET["error"];
+   
+}
+?>
+    
     <header>
         <ul id="ups">
 
@@ -156,7 +165,7 @@
         <div class="imagecont2" style="left:70%">
             <img src="https://sneakernews.com/wp-content/uploads/2022/10/adidas-yeezy-boost-350-v2-salt-hq2060-store-list-1.jpg"
                 alt="panda" class="itemimg">
-            <p class="itemname">Yeezy Voost 350 V2</p>
+            <p class="itemname">Yeezy Boost 350 V2</p>
         </div>
     </div>
     <footer id="foot">
