@@ -72,7 +72,7 @@ if (isset($_POST["submit"])) {
     $ppl = $tsql->fetchAll();
     $match_found = false;
     foreach ($ppl as $person) {
-        if ($username == $person) {
+        if ($uname == $person) {
             $match_found = true;
             break;
         }
