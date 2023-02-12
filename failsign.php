@@ -47,6 +47,11 @@
         h2 {
             font-family: 'Bebas Neue', cursive;
         }
+        
+       
+       span {
+            font-family: 'Bebas Neue', cursive;
+        }
     </style>
 
     <script type="module" src="back.js">
