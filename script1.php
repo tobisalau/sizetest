@@ -43,6 +43,8 @@ if (isset($_POST["submit"])) {
     }
    
     try {
+    $uname = vali_input($_POST["username"]);
+    $pword = vali_input($_POST["pwrd"]);
     $conn = new PDO("sqlsrv:server = tcp:sizeserver2.database.windows.net,1433; Database = sizedb5", "ooas3", "Password22!!");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $tl = "SELECT pword FROM Users WHERE username = '$uname'";
