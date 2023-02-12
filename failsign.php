@@ -53,16 +53,28 @@
     </script>
    <script> 
     
-    function showError() {
+    function showError(ab) {
         x = document.getElementsByTagName("span");
-        var ab = <?php echo json_encode($errnm, JSON_HEX_TAG); ?>;
         x.innerText = ab;
+        x.textContent = ab;
     }
     </script>
 
 </head>
 
 <body>
+   
+   <?php 
+
+if (isset($_GET["error"])) {
+    $errnm = $_GET["error"];
+    echo '<script type="text/javascript">',
+    'showError(<?php echo json_encode($errnm, JSON_HEX_TAG); ?>);',
+    '</script>'
+    ;
+}
+?>
+   
     <header>
         <ul id="ups">
 
@@ -89,20 +101,11 @@
                 <input type="password" class="input" name="pwrd" placeholder="Password"> <br>
                 <input type="submit" value="Submit" class="input">
             </form>
-            <span></span>
+            <span>Hello</span>
         </section>
     </div>
 
-<?php 
 
-if (isset($_GET["error"])) {
-    $errnm = $_GET["error"];
-    echo '<script type="text/javascript">',
-    'showError();',
-    '</script>'
-    ;
-}
-?>
 
     <!-- <div id="thelist">
         <ul id="select" style="padding: 0; margin: 0;">
