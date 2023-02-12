@@ -49,17 +49,24 @@ if (isset($_POST["submit"])) {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $tl = "SELECT pword FROM Users WHERE username = '$uname'";
     $tsql = $conn->query($tl);
-    //$getResults= sqlsrv_query($conn, $tsql);
-    if (hash('md5',$tsql) == hash('md5',$pword)) {
-        header("Location: index.php?error=success");
+    $rows = $tsql->fetchAll();
+    if (!empty($rows)) {
+        $hash = hash('md5', $rows[0]['pword']);
+        if ($hash == hash('md5', $pword)) {
+            header("Location: index.php?error=success");
+            exit;
+        } else {
+            header("Location: login.php?error=invalid");
+            exit;
+        }
+    } else {
+        header("Location: login.php?error=invalid");
         exit;
-    } 
     }
-    catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-    }
-
+} catch (PDOException $e) {
+    header("Location: login.php?error=server");
+    exit;
+}
     
    
     
