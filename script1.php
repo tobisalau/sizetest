@@ -42,14 +42,10 @@ if (isset($_POST["submit"])) {
     else {
         $pword = vali_input($_POST["pwrd"]);;
     }
-    $serverName = "sizeserver2.database.windows.net"; 
-    $connectionOptions = array(
-        "Database" => "sizedb5", 
-        "Uid" => "ooas3", 
-        "PWD" => "Password22!!" 
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
+   
+    $connectionInfo = array("UID" => "ooas3", "pwd" => "Password22!!", "Database" => "sizedb5", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+    $serverName = "tcp:sizeserver2.database.windows.net,1433";
+    $conn = sqlsrv_connect($serverName, $connectionInfo);
     $tsql= "SELECT pword FROM Users WHERE username == " . $uname;
     $getResults= sqlsrv_query($conn, $tsql);
     if (hash('md5',$getResults) == hasg('md5',$pword)) {
